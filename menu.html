@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .menu-nav-btn {
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-weight: 500;
+        }
+        .food-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+        .price-tag {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="#">TasteBuds Cafe</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Our Special Menu</h1>
+            <p class="text-muted">Fresh, hot, and delicious food delivered straight to your table</p>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2 mb-5">
+            <button class="btn btn-warning menu-nav-btn filter-btn" data-filter="all">All</button>
+            <button class="btn btn-outline-dark menu-nav-btn filter-btn" data-filter="pizza">Pizza</button>
+            <button class="btn btn-outline-dark menu-nav-btn filter-btn" data-filter="burger">Burgers</button>
+            <button class="btn btn-outline-dark menu-nav-btn filter-btn" data-filter="drinks">Drinks</button>
+        </div>
+
+        <div class="row g-4" id="menu-container">
+            <div class="col-md-4 menu-item" data-category="pizza">
+                <div class="card food-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Margherita Pizza</h5>
+                        <p class="card-text text-muted">Classic cheese pizza with fresh tomato sauce, mozzarella, and fresh basil leaves.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price-tag">Rs. 899</span>
+                            <button class="btn btn-sm btn-dark order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="burger">
+                <div class="card food-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Zinger Burger</h5>
+                        <p class="card-text text-muted">Crispy fried chicken breast topped with fresh lettuce and signature mayo sauce.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price-tag">Rs. 450</span>
+                            <button class="btn btn-sm btn-dark order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="drinks">
+                <div class="card food-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Mint Margarita</h5>
+                        <p class="card-text text-muted">A refreshing blend of fresh mint leaves, lime juice, ice cubes, and soda.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price-tag">Rs. 250</span>
+                            <button class="btn btn-sm btn-dark order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="pizza">
+                <div class="card food-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Chicken Tikka Pizza</h5>
+                        <p class="card-text text-muted">Spicy chicken tikka chunks, onions, and premium cheese mixture on a crispy crust.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price-tag">Rs. 1,099</span>
+                            <button class="btn btn-sm btn-dark order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="burger">
+                <div class="card food-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Beef Cheese Burger</h5>
+                        <p class="card-text text-muted">Grilled juicy beef patty loaded with melted cheddar cheese, pickles, and onions.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price-tag">Rs. 590</span>
+                            <button class="btn btn-sm btn-dark order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="drinks">
+                <div class="card food-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Cold Coffee</h5>
+                        <p class="card-text text-muted">Rich blended coffee served chilled with a scoop of premium vanilla ice cream.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price-tag">Rs. 320</span>
+                            <button class="btn btn-sm btn-dark order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2026 TasteBuds Cafe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://jquery.com"></script>
+    <script src="https://jsdelivr.net"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".filter-btn").click(function() {
+                $(".filter-btn").removeClass("btn-warning").addClass("btn-outline-dark");
+                $(this).removeClass("btn-outline-dark").addClass("btn-warning");
+
+                var value = $(this).attr('data-filter');
+                
+                if(value == "all") {
+                    $('.menu-item').show('1000');
+                } else {
+                    $(".menu-item").not('.'+value).hide('300');
+                    $('.menu-item').filter('.'+value).show('300');
+                }
+            });
+
+            $(".order-btn").click(function() {
+                var itemName = $(this).closest('.card-body').find('.card-title').text();
+                alert(itemName + " has been added to your order!");
+            });
+        });
+    </script>
+</body>
+</html>
